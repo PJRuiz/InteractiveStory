@@ -14,6 +14,7 @@
 		952B1F251CB13D1100BE22E1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 952B1F231CB13D1100BE22E1 /* LaunchScreen.storyboard */; };
 		952B1F301CB13D1200BE22E1 /* InteractiveStoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 952B1F2F1CB13D1200BE22E1 /* InteractiveStoryTests.swift */; };
 		952B1F3B1CB13D1200BE22E1 /* InteractiveStoryUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 952B1F3A1CB13D1200BE22E1 /* InteractiveStoryUITests.swift */; };
+		952B1F491CB252AE00BE22E1 /* InteractiveStory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 952B1F481CB252AE00BE22E1 /* InteractiveStory.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,7 @@
 		952B1F361CB13D1200BE22E1 /* InteractiveStoryUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = InteractiveStoryUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		952B1F3A1CB13D1200BE22E1 /* InteractiveStoryUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InteractiveStoryUITests.swift; sourceTree = "<group>"; };
 		952B1F3C1CB13D1200BE22E1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		952B1F481CB252AE00BE22E1 /* InteractiveStory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InteractiveStory.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +101,7 @@
 			children = (
 				952B1F1A1CB13D1100BE22E1 /* AppDelegate.swift */,
 				952B1F1C1CB13D1100BE22E1 /* ViewController.swift */,
+				952B1F481CB252AE00BE22E1 /* InteractiveStory.swift */,
 				952B1F1E1CB13D1100BE22E1 /* Main.storyboard */,
 				952B1F211CB13D1100BE22E1 /* Assets.xcassets */,
 				952B1F231CB13D1100BE22E1 /* LaunchScreen.storyboard */,
@@ -193,6 +196,7 @@
 				TargetAttributes = {
 					952B1F161CB13D1000BE22E1 = {
 						CreatedOnToolsVersion = 7.3;
+						DevelopmentTeam = 74VVV5ZXY4;
 					};
 					952B1F2A1CB13D1200BE22E1 = {
 						CreatedOnToolsVersion = 7.3;
@@ -256,6 +260,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				952B1F491CB252AE00BE22E1 /* InteractiveStory.swift in Sources */,
 				952B1F1D1CB13D1100BE22E1 /* ViewController.swift in Sources */,
 				952B1F1B1CB13D1100BE22E1 /* AppDelegate.swift in Sources */,
 			);
@@ -401,6 +406,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = InteractiveStory/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.entrepreneurgt.InteractiveStory;
@@ -412,6 +418,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = InteractiveStory/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.entrepreneurgt.InteractiveStory;
@@ -484,6 +491,7 @@
 				952B1F411CB13D1200BE22E1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		952B1F421CB13D1200BE22E1 /* Build configuration list for PBXNativeTarget "InteractiveStoryTests" */ = {
 			isa = XCConfigurationList;
@@ -492,6 +500,7 @@
 				952B1F441CB13D1200BE22E1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		952B1F451CB13D1200BE22E1 /* Build configuration list for PBXNativeTarget "InteractiveStoryUITests" */ = {
 			isa = XCConfigurationList;
@@ -500,6 +509,7 @@
 				952B1F471CB13D1200BE22E1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
