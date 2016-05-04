@@ -28,6 +28,8 @@ class PageController: UIViewController {
   
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.backgroundColor = .whiteColor()
+      
       if let page = page {
         artwork.image = page.story.artwork
 //        storyLabel.text = page.story.text
@@ -38,6 +40,19 @@ class PageController: UIViewController {
         attributedString.addAttribute(NSParagraphStyleAttributeName, value: paragraphStyle, range: NSMakeRange(0, attributedString.length))
         
         storyLabel.attributedText = attributedString
+        
+        if let firstChoice = page.firstChoice {
+          firstChoiceButton.setTitle(firstChoice.title, forState: .Normal)
+          firstChoiceButton.addTarget(self, action: #selector(PageController.loadFirstChoice), forControlEvents: .TouchUpInside)
+        } else {
+          firstChoiceButton.setTitle("Play Again", forState: .Normal)
+          firstChoiceButton.addTarget(self, action: #selector(PageController.playAgain), forControlEvents: .TouchUpInside)
+        }
+        
+        if let secondChoice = page.secondChoice {
+          secondChoiceButton.setTitle(secondChoice.title, forState: .Normal)
+          secondChoiceButton.addTarget(self, action: #selector(PageController.loadSecondChoice), forControlEvents: .TouchUpInside)
+        }
         
       }
 
@@ -67,15 +82,52 @@ class PageController: UIViewController {
     storyLabel.translatesAutoresizingMaskIntoConstraints = false
     storyLabel.numberOfLines = 0
     
-    
-    
     NSLayoutConstraint.activateConstraints([
       storyLabel.leadingAnchor.constraintEqualToAnchor(view.leadingAnchor, constant: 16.0),
       storyLabel.trailingAnchor.constraintEqualToAnchor(view.trailingAnchor, constant: -16.0),
       storyLabel.topAnchor.constraintEqualToAnchor(view.centerYAnchor, constant: -48)
     ])
     
+    view.addSubview(firstChoiceButton)
+    firstChoiceButton.translatesAutoresizingMaskIntoConstraints = false
     
+    NSLayoutConstraint.activateConstraints([
+      firstChoiceButton.centerXAnchor.constraintEqualToAnchor(view.centerXAnchor),
+      firstChoiceButton.bottomAnchor.constraintEqualToAnchor(view.bottomAnchor)
+      ])
+    
+    view.addSubview(secondChoiceButton)
+    secondChoiceButton.translatesAutoresizingMaskIntoConstraints = false
+    
+    NSLayoutConstraint.activateConstraints([
+      secondChoiceButton.centerXAnchor.constraintEqualToAnchor(view.centerXAnchor),
+      secondChoiceButton.bottomAnchor.constraintEqualToAnchor(view.bottomAnchor, constant: -32.0)
+    ])
+  }
+  
+  // Refactor later onto a single function once we detach the IBAction and identify the sender with parameters
+  
+  func loadFirstChoice() {
+    // Retrieve page instance stored in first choice and create an instance of PageController to launch
+    if let page = page, firstChoice = page.firstChoice {
+      let nextPage = firstChoice.page
+      let pageController = PageController(page: nextPage)
+      
+      // Push view controller into stack
+      navigationController?.pushViewController(pageController, animated: true)
+    }
+  }
+  
+  func loadSecondChoice() {
+    if let page = page, secondChoice = page.secondChoice {
+      let nextPage = secondChoice.page
+      let pageController = PageController(page: nextPage)
+      
+      navigationController?.pushViewController(pageController, animated: true)
+    }
   }
 
+  func playAgain() {
+    navigationController?.popToRootViewControllerAnimated(true)
+  }
 }
