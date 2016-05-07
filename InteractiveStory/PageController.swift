@@ -7,10 +7,12 @@
 //
 
 import UIKit
+import AudioToolbox
 
 class PageController: UIViewController {
 
   var page: Page?
+  var sound: SystemSoundID = 0
   
   let artwork = UIImageView()
   let storyLabel = UILabel()
