@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -27,18 +28,40 @@
                                     <segue destination="ftr-vQ-Vz2" kind="show" identifier="startAdventure" id="Oub-th-t5S"/>
                                 </connections>
                             </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wbn-md-KFJ">
+                                <rect key="frame" x="44" y="452" width="512" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="9Gj-K4-tiQ"/>
+                                </connections>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="MKH-SD-1hR" secondAttribute="bottom" id="2a9-ga-Bre"/>
                             <constraint firstItem="Ui8-45-J9Y" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="5FS-nZ-V8U"/>
                             <constraint firstItem="MKH-SD-1hR" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="DBR-ek-n1T"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="wbn-md-KFJ" secondAttribute="trailing" constant="24" id="WZW-CU-bhG"/>
+                            <constraint firstItem="Ui8-45-J9Y" firstAttribute="top" secondItem="wbn-md-KFJ" secondAttribute="bottom" constant="40" id="dTm-Ls-CXj"/>
+                            <constraint firstItem="wbn-md-KFJ" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="24" id="duC-3S-RDf"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Ui8-45-J9Y" secondAttribute="bottom" constant="48" id="eHn-Uh-onE"/>
+                            <constraint firstItem="wbn-md-KFJ" firstAttribute="top" secondItem="MKH-SD-1hR" secondAttribute="bottom" constant="-181" id="oyz-ks-wPd"/>
                             <constraint firstItem="MKH-SD-1hR" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="qqy-Y2-SJ8"/>
                             <constraint firstAttribute="trailing" secondItem="MKH-SD-1hR" secondAttribute="trailing" id="r2O-ux-XRL"/>
+                            <constraint firstItem="wbn-md-KFJ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="y5Q-fj-JGH"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="oyz-ks-wPd"/>
+                            </mask>
+                        </variation>
                     </view>
                     <navigationItem key="navigationItem" id="eRR-i8-6La"/>
+                    <connections>
+                        <outlet property="nameTextField" destination="wbn-md-KFJ" id="eK9-Xf-6ZN"/>
+                        <outlet property="textFieldBottomConstraint" destination="dTm-Ls-CXj" id="YqH-bL-bVR"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
