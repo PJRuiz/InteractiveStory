@@ -115,6 +115,9 @@ class PageController: UIViewController {
       let nextPage = firstChoice.page
       let pageController = PageController(page: nextPage)
       
+      //Play Sound
+      playSound(nextPage.story.soundEffectURL)
+      
       // Push view controller into stack
       navigationController?.pushViewController(pageController, animated: true)
     }
@@ -124,6 +127,7 @@ class PageController: UIViewController {
     if let page = page, secondChoice = page.secondChoice {
       let nextPage = secondChoice.page
       let pageController = PageController(page: nextPage)
+      playSound(nextPage.story.soundEffectURL)
       
       navigationController?.pushViewController(pageController, animated: true)
     }
@@ -131,5 +135,11 @@ class PageController: UIViewController {
 
   func playAgain() {
     navigationController?.popToRootViewControllerAnimated(true)
+  }
+  
+  func playSound(url: NSURL) {
+    // & points to the location in memory where the value is residing, not the value itself
+    AudioServicesCreateSystemSoundID(url, &sound)
+    AudioServicesPlaySystemSound(sound)
   }
 }
